@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Food Club</title>
+    
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script type="text/javascript" src="https://code.angularjs.org/1.2.28/angular-route.min.js"></script>
+</head>
+<body ng-app="FoodClubApp">
+    <div class="content" ng-controller="MainController as main">
+        
+        <h1>{{ main.title }}</h1>
+        <h3>{{ main.slogan }}</h3>
+        <div ng-view></div>
+        </br>
+        <ul>
+            <li ng-repeat="email in main.data">
+                <div>
+                    <h3><a href="#/view/{{$index}}">{{ email.subject }}</a></h3>
+                    <span>{{ email.from }} - {{ email.datetime | date }}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers.js"></script>
+    <script type="text/javascript" src="services.js"></script>
+</body>
+</html>
