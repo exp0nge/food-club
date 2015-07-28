@@ -7,7 +7,7 @@ app.controller('MainController', ['emailFetcher', function(emailFetcher){
     });
 }]);
 
-app.controller('EmailController', ['emailFetcher', '$routeParams', function($routeParams, emailFetcher){
+app.controller('EmailController', ['$routeParams', 'emailFetcher',  function($routeParams, emailFetcher){
     var vm = this;
     emailFetcher.success(function(data){
         vm.email = data[$routeParams.id];
